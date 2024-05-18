@@ -1,0 +1,470 @@
+@font-face {
+    font-family: 'Uni Sans';
+    src: url('https://res.cloudinary.com/muhammederdem/raw/upload/v1536168547/unisans-font/UniSansHeavyCAPS.woff2') format('woff2'),
+        url('https://res.cloudinary.com/muhammederdem/raw/upload/v1536168547/unisans-font/UniSansHeavyCAPS.woff') format('woff'),
+        url('https://res.cloudinary.com/muhammederdem/raw/upload/v1536168548/unisans-font/UniSansHeavyCAPS.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Uni Sans';
+    src: url('https://res.cloudinary.com/muhammederdem/raw/upload/v1536168545/unisans-font/UniSansThinCAPS.woff2') format('woff2'),
+        url('https://res.cloudinary.com/muhammederdem/raw/upload/v1536168545/unisans-font/UniSansThinCAPS.woff') format('woff'),
+        url('https://res.cloudinary.com/muhammederdem/raw/upload/v1536168548/unisans-font/UniSansThinCAPS.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+img {
+    max-width: 100%;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Dosis", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    width: 100%;
+    height: 100dvh;
+    background-image: url(https://res.cloudinary.com/dfxn0egdl/image/upload/f_auto,q_auto/v1/StarWars/wallpaper);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* styling container of content */
+.container {
+    max-width: 1050px;
+    width: 90%;
+    height: 600px;
+    position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+.prev,
+.next {
+    z-index: 99999;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+}
+
+.prev {
+    left: 0;
+    transform: translate(-50%, -50%);
+}
+
+.next {
+    left: 100%;
+    transform: translate(-50%, -50%);
+}
+
+.prev i,
+.next i {
+    font-size: 25px;
+    color: black;
+    transition: .3s;
+}
+
+.prev:hover i {
+    transform: translateX(-5px);
+}
+
+.next:hover i {
+    transform: translateX(5px);
+}
+
+.star-wars-logo {
+    height: 100%;
+    background-image: linear-gradient(64deg, #cc3843 0%, #cb193f 100%);
+    box-shadow: 0px 30px 139px 0px rgba(10, 22, 31, 0.26);
+    border-radius: 30px;
+    padding: 45px 40px;
+    width: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+}
+
+.star-wars-logo img {
+    object-fit: contain;
+    width: 510px;
+    display: block;
+    object-position: left center;
+    opacity: 0.2;
+    transform: rotate(-90deg) translateY(-50%);
+    max-width: inherit;
+    left: 10px;
+    position: absolute;
+}
+
+/* prod-details styling  */
+.prod-section {
+    width: 75%;
+    height: 85%;
+    border-radius: 30px;
+    box-shadow: 0 28px 79px 0 rgba(10, 22, 31, 0.35);
+    position: relative;
+    background-image: url(https://res.cloudinary.com/dfxn0egdl/image/upload/v1715361332/StarWars/item1bg.webp);
+    background-size: cover;
+}
+
+.product-img {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    width: 450px;
+}
+
+.product-img.active {
+    opacity: 1;
+}
+
+/* sliders styling code */
+.prod-section {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 30px 50px 30px 0px;
+}
+
+.info-slider {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.info-slider h1 {
+    color: white;
+    font-size: 45px;
+    font-family: Uni Sans;
+    letter-spacing: 1px;
+}
+
+.info-slider .price {
+    font-size: 40px;
+    font-weight: 400;
+    color: white;
+    font-family: "Dosis", sans-serif;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.info-slider .price::before {
+    content: "99";
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 25px;
+    transform: translate(89%, -42%);
+}
+
+.customize-section {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.custom {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+}
+
+.custom span {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 2px;
+}
+
+.custom ul {
+    display: flex;
+    list-style: none;
+    gap: 10px;
+}
+
+.custom ul li {
+    color: rgb(164, 164, 164);
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.custom ul li.active {
+    border: #cb193f 2px solid;
+}
+
+.hr {
+    width: 1px;
+    height: 100%;
+    background-color: white;
+    display: inline-block;
+}
+.durability{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+.durability span{
+    color: white;
+    font-size: 20px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    text-align: center;
+}
+/* circle */
+.flex-wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.single-chart {
+    width: 70%;
+    justify-content: space-around;
+}
+
+.circular-chart {
+    display: block;
+    margin: 10px auto;
+    max-width: 80%;
+    max-height: 250px;
+}
+
+.circle-bg {
+    fill: none;
+    stroke: #eee;
+    stroke-width: 0;
+}
+
+.circle {
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    animation: progress 1s ease-out forwards;
+}
+
+@keyframes progress {
+    0% {
+        stroke-dasharray: 0 100;
+    }
+}
+
+.circular-chart.orange .circle {
+    stroke: #cb193f;
+}
+
+.percentage {
+    fill: #ffffff;
+    font-family: sans-serif;
+    font-size: 0.5em;
+    text-anchor: middle;
+}
+
+.product-slider__cart {
+    box-shadow: 0 7px 99px 0 rgba(204, 51, 66, 0.6);
+    background-image: linear-gradient(-45deg, #cc3843 0%, #cb193f 100%);
+    border: none;
+    color: #fff;
+    padding: 10px 30px;
+    border-radius: 50px;
+    min-height: 50px;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+.product-slider__fav {
+    color: #888e94;
+    background: none;
+    border: none;
+    position: relative;
+    padding-left: 25px;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.fa-heart{
+    color: #888e94;
+    font-size: 25px;
+}
+.actions{
+    display: flex;
+    justify-content: flex-start;
+}
+
+/* devices */
+@media (max-width: 980px) {
+    .product-img{
+        width: 350px;
+    }
+    .single-chart{
+        width: 90%;
+    }
+}
+/* mobile screen */
+@media (max-width: 750px) {
+    body{
+        width: 100%;
+        height: 100dvh;
+    }
+    .container{
+        width: 95%;
+        height: 90%;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    .star-wars-logo{
+        width: 100%;
+        height: 200px;
+        padding: 0px 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .star-wars-logo img{
+        object-fit: contain;
+        width: 90%;
+        display: block;
+        object-position: left center;
+        opacity: 0.2;
+        transform: rotate(0deg) translateY(0%);
+        max-width: inherit;
+        left: 10px;
+        position: absolute;
+    }
+    .prod-section{
+        width: 85%;
+        padding: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-size: cover;
+        background-position: 60%;
+    }
+    .prod-section img{
+        width: 200px;
+        top: 0;
+        left: 50%;
+    }
+    .info-slider{
+        width: 100%;
+        height: calc(100% - 100px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-self: flex-end;
+        padding-bottom: 20px;
+    }
+    .info-slider h1{
+        font-size: 22px;
+        text-align: center;
+    }
+    .info-slider h1 br{
+        display: none;
+    }
+    .info-slider .price {
+        font-size: 40px;
+        font-weight: 400;
+        color: white;
+        position: relative;
+    }
+    .customize-section{
+        flex-direction: column;
+        align-items: center;
+    }
+    .custom{
+        align-items: center;
+        width: 100%;
+    }
+    .hr{
+        width: 90%;
+        height: 1px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    .single-chart{
+        width: 70%;
+    }
+    .durability span{
+        font-size: 20px;
+    }
+    .flex-wrapper{
+        width: 170px;
+        gap: 0px;
+    }
+    .actions{
+        flex-direction: column;
+        gap: 20px;
+        width: 90%;
+    }
+    .product-slider__fav{
+        margin: 0;
+        font-size: 18px;
+    }
+    .prev {
+        left: 7.5%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .next {
+        left: 92.5%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .prev i,
+    .next i {
+        font-size: 25px;
+        color: black;
+        transition: .3s;
+    }
+    .prev,
+    .next{
+        width: 50px;
+        height: 50px;
+    }
+    
+    .prev:hover i {
+        transform: translateX(0px);
+    }
+    
+    .next:hover i {
+        transform: translateX(0px);
+    }
+}
